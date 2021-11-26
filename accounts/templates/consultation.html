@@ -1,0 +1,28 @@
+{% extends 'default.html' %}
+{% block 'title' %}Consultation{% endblock %}
+{% load bootstrap5 %}
+
+{% block 'body' %}
+<div>
+    <div class="row-no">
+        <label>Medic</label>
+        <input type="text" value="{{medic.name}}" readonly>
+    </div>
+    <div class="row-no">
+        <label>SpecialtyS</label>
+        <input type="text" value="{{medic.specialty}}" readonly>
+    </div>
+    <div class="row-no">
+        <label>Pacient</label>
+        <input type="text" value="{{user.first_name}}" readonly>
+    </div>
+</div>
+<form method="POST">
+  {% csrf_token %}
+
+  {% bootstrap_form form %}
+
+  <input type="submit" value="To Schedule">
+
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'default.html' %}
+{% block 'title' %}Register{% endblock %}
+{% load bootstrap5 %}
+
+{% block 'body' %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+
+  {% bootstrap_form form %}
+
+  <input type="submit" name="" value="Sign Up">
+
+</form>
+{% endblock %}
